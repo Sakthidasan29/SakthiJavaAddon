@@ -1,6 +1,6 @@
 package Challenges;
 
-public class task1 {
+public class Day2Task1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
