@@ -2,7 +2,7 @@ package Challenges;
 
 //import java.util.Iterator;
 
-public class task3 {
+public class Day2Task3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
