@@ -2,7 +2,7 @@ package Challenges;
 
 import java.util.Scanner;
 
-public class task2 {
+public class Day2Task2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
