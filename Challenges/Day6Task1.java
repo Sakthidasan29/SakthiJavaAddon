@@ -2,7 +2,7 @@ package Day6;
 
 import java.util.ArrayList;
 
-public class Day5Task1 {
+public class Day6Task1 {
 
 	public static void main(String[] args) {
 	ArrayList<String> arr=new ArrayList<String>();
