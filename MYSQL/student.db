@@ -1,0 +1,29 @@
+mysql> create table student(
+    -> TName varchar(20),
+    -> TId int,
+    -> TDepartment varchar(20),
+    -> TCourse varchar(20)
+    -> );
+mysql> insert into  student
+    -> values('Surya',19,'BSc Computer Technology','MySql');
+ERROR 1406 (22001): Data too long for column 'TDepartment' at row 1
+mysql> insert into  student
+    -> values('Surya',19,'BSc CT','MySql');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into  student
+    -> values('Sakthi',44,'BSc CT','MySql');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into  student
+    -> values('Sanjay',45,'BSc CT','MySql');
+Query OK, 1 row affected (0.00 sec)
+mysql> select*
+    -> from student;
++--------+------+-------------+---------+
+| TName  | TId  | TDepartment | TCourse |
++--------+------+-------------+---------+
+| Surya  |   19 | BSc CT      | MySql   |
+| Sakthi |   44 | BSc CT      | MySql   |
+| Sanjay |   45 | BSc CT      | MySql   |
++--------+------+-------------+---------+
