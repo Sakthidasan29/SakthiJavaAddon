@@ -61,3 +61,27 @@ select*from employee1
 |     4 | roshan | mg        |  75000 | 2025-11-19 |
 +-------+--------+-----------+--------+------------+
 4 rows in set (0.00 sec)
+mysql> select *from employee1 where salary=' 80000'and sector='hr';
+--------------
+select *from employee1 where salary=' 80000'and sector='hr'
+--------------
+
++-------+--------+--------+--------+------------+
+| empid | name   | sector | salary | joindate   |
++-------+--------+--------+--------+------------+
+|     1 | sakthi | hr     |  80000 | 2025-09-19 |
++-------+--------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+mysql> select *from employee1 where sector='mg'and salary >70000;
+--------------
+select *from employee1 where sector='mg'and salary >70000
+--------------
+
++-------+--------+--------+--------+------------+
+| empid | name   | sector | salary | joindate   |
++-------+--------+--------+--------+------------+
+|     4 | roshan | mg     |  75000 | 2025-11-19 |
++-------+--------+--------+--------+------------+
+1 row in set (0.00 sec)
+
