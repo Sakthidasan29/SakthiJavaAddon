@@ -9,12 +9,12 @@ num int
 
 
 insert into student1
-values('sanjay',44,'ct','mysql','sakthi358@gmail.com',536153);
+values('sakthi',44,'ct','mysql','sakthi358@gmail.com',536153);
 insert into student1
 values('surya',19,'ct','mysql','surya348@gmail.com',536152);
 
 insert into student1
-values('sakthi',46,'ct','mysql','sanjay2848@gmail.com',536151);
+values('sanjay',46,'ct','mysql','sanjay2848@gmail.com',536151);
 
 
 insert into student1
@@ -26,9 +26,9 @@ insert into student1
 +--------+--------+------+--------+----------------------+--------+
 | name   | rollno | dep  | course | email                | num    |
 +--------+--------+------+--------+----------------------+--------+
-| sanjay |     46 | ct   | mysql  | sanjay2848@gmail.com | 536151 |
+| sakthi |     44 | ct   | mysql  |  sakthi358@gmail.com | 536151 |
 | surya  |     19 | ct   | mysql  | surya348@gmail.com   | 536152 |
-| sakthi |     44 | ct   | mysql  | sakthi358@gmail.com  | 536153 |
+| sanjay |     46 | ct   | mysql  | sanjay2848@gmail.com  | 536153 |
 | boss   |    100 | ct   | mysql  | boss358@gmail.com    | 536154 |
 | john   |    200 | ct   | mysql  | john359@gmail.com    | 536155 |
 +--------+--------+------+--------+----------------------+--------+
@@ -36,18 +36,18 @@ insert into student1
 alter table student1
 add column age int;
 
-mysql> update student1 set age="19" where name="sanjay";
-mysql> update student1 set age="19" where name="surya";
 mysql> update student1 set age="19" where name="sakthi";
+mysql> update student1 set age="19" where name="surya";
+mysql> update student1 set age="19" where name="sanjay";
 mysql> update student1 set age="19" where name="boss";
 mysql> update student1 set age="19" where name="john";
 
 +--------+--------+------+--------+----------------------+--------+------+
 | name   | rollno | dep  | course | email                | num    | age  |
 +--------+--------+------+--------+----------------------+--------+------+
-| sanjay |     46 | ct   | mysql  | sanjay2848@gmail.com | 536151 |   19 |
+| sanjay |     46 | ct   | mysql  |sakthi358@gmail.com   | 536151 |   19 |
 | surya  |     19 | ct   | mysql  | surya348@gmail.com   | 536152 |   19 |
-| sakthi |     44 | ct   | mysql  | sakthi358@gmail.com  | 536153 |   19 |
+| sakthi |     44 | ct   | mysql  | sanjay2848@gmail.com | 536153 |   19 |
 | boss   |    100 | ct   | mysql  | boss358@gmail.com    | 536154 |   19 |
 | john   |    200 | ct   | mysql  | john359@gmail.com    | 536155 |   19 |
 +--------+--------+------+--------+----------------------+--------+------+
