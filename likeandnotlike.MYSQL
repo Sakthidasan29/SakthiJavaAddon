@@ -927,3 +927,7 @@ mysql> select sum(comm),job
     -> group by job
     -> having sum(comm)>1000;
 --------------
+mysql> select count(*),job
+    -> from emp
+    -> where job='MANAGER'
+    -> hsving bcopunt(*)>2;
