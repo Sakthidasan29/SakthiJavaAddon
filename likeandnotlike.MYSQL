@@ -912,3 +912,18 @@ where hiredate>'1981-01-01' and hiredate<'1987-12-31'
 13 rows in set (0.00 sec)
 
 mysql> \
+select avg(sal),deptno
+    -> from emp
+    -> group by deptno
+    -> having avg(sal)>2000;
++-------------+--------+
+| avg(sal)    | deptno |
++-------------+--------+
+| 2175.000000 |     20 |
+| 2916.666667 |     10 |
++-------------+--------+
+mysql> select sum(comm),job
+    -> from emp
+    -> group by job
+    -> having sum(comm)>1000;
+--------------
