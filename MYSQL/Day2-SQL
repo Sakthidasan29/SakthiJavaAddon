@@ -89,3 +89,6 @@ mysql> select name,department,joindate
     -> where de[t='hr'and joindate='2025-09-19'
     -> order by joindate desc;
 --------------
+mysql> select *, sal*12 as ANNUAL_SALARY
+    -> from emp
+    -> where job not in('ANALYST','MANAGER');
