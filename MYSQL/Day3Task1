@@ -1,0 +1,30 @@
+mysql> select*from  student;
+--------------
+select*from  student
+--------------
+
++---------+--------+-------+-----------+------+----------------------+
+| name    | rollno | marks | course    | fee  | books                |
++---------+--------+-------+-----------+------+----------------------+
+| michael |     34 |    78 | CT        | 1500 |  Basics to networks  |
+| john    |     35 |    90 | fullStack | 1600 |  Basics to fulstack  |
+| karthi  |     36 |    89 | Webdev    | 1200 | Basic of Web         |
+| sam     |     37 |    85 | MAYA      | 1200 |  visual Designing    |
++---------+--------+-------+-----------+------+----------------------+
+
+mysql> select *
+    -> from student
+    -> where marks>=80;
+--------------
+select *
+from student
+where marks>=80
+--------------
+
++--------+--------+-------+-----------+------+----------------------+
+| name   | rollno | marks | course    | fee  | books                |
++--------+--------+-------+-----------+------+----------------------+
+| john   |     35 |    90 | fullStack | 1600 |  Basics to fulstack  |
+| karthi |     36 |    89 | Webdev    | 1200 | Basic of Web         |
+| sam    |     37 |    85 | MAYA      | 1200 |  visual Designing    |
++--------+--------+-------+-----------+------+----------------------+
