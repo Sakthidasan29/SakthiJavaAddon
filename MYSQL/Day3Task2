@@ -1,0 +1,34 @@
+mysql> select*
+    -> from student;
+--------------
+select*
+from student
+--------------
+
++---------+--------+-------+-----------+------+----------------------+
+| name    | rollno | marks | course    | fee  | books                |
++---------+--------+-------+-----------+------+----------------------+
+| michael |     34 |    78 | CT        | 1500 |  Basics to networks  |
+| john    |     35 |    90 | fullStack | 1600 |  Basics to fulstack  |
+| karthi  |     36 |    89 | Webdev    | 1200 | Basic of Web         |
+| sam     |     37 |    85 | MAYA      | 1200 |  visual Designing    |
++---------+--------+-------+-----------+------+----------------------+
+4 rows in set (0.00 sec)
+
+mysql> select *
+    -> from student
+    -> order by fee asc;
+--------------
+select *
+from student
+order by fee asc
+--------------
+
++---------+--------+-------+-----------+------+----------------------+
+| name    | rollno | marks | course    | fee  | books                |
++---------+--------+-------+-----------+------+----------------------+
+| karthi  |     36 |    89 | Webdev    | 1200 | Basic of Web         |
+| sam     |     37 |    85 | MAYA      | 1200 |  visual Designing    |
+| michael |     34 |    78 | CT        | 1500 |  Basics to networks  |
+| john    |     35 |    90 | fullStack | 1600 |  Basics to fulstack  |
++---------+--------+-------+---
