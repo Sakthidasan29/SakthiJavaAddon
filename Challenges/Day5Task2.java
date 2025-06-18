@@ -1,6 +1,6 @@
 package Day6;
 import java.util.HashSet;
-public class Day6Task2 {
+public class Day5Task2 {
 
 	public static void main(String[] args) {
 		HashSet<String>email=new HashSet();
