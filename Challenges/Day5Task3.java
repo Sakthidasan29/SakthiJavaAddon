@@ -2,7 +2,7 @@ package Day6;
 
 import java.util.HashMap;
 import java.util.Map;
-public class Day6Task3 {
+public class Day5Task3 {
 
 	public static void main(String[] args) {
 		HashMap<String,Integer> student=new HashMap();
