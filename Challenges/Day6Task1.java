@@ -1,7 +1,5 @@
 package Day6;
-//                                            THREAD
-    
-//                                            ONE METHOD
+
 
 public class Methods extends Thread{
      public void run() {
