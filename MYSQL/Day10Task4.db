@@ -1,0 +1,321 @@
+
+mysql> create database school;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> use school;
+Database changed
+
+mysql> create table student (
+    -> sroll int,
+    -> sname varchar(50),
+    -> coursename varchar(50)
+    -> );
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> insert into student values(01,'Keerthana','java');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(02,'vaishu','c++');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(03,'Harini','java');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(04,'Rubi','c');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(05,'uma','java');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(06,'devi','c++');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(07,'renu','c');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(08,'sheela','c');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(09,'jannu','java');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(10,'kavya','java');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select* from student;
++-------+-----------+------------+
+| sroll | sname     | coursename |
++-------+-----------+------------+
+|     1 | Keerthana | java       |
+|     2 | vaishu    | c++        |
+|     3 | Harini    | java       |
+|     4 | Rubi      | c          |
+|     5 | uma       | java       |
+|     6 | devi      | c++        |
+|     7 | renu      | c          |
+|     8 | sheela    | c          |
+|     9 | jannu     | java       |
+|    10 | kavya     | java       |
++-------+-----------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select count(*)
+    -> from student
+    -> where sroll=10 and coursename='java';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> select count(*)
+    -> ;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select coursename,count(*) as studentcount
+    -> from student
+    -> group by coursename;
++------------+--------------+
+| coursename | studentcount |
++------------+--------------+
+| java       |            5 |
+| c++        |            2 |
+| c          |            3 |
++------------+--------------+
+3 rows in set (0.01 sec)
+
+mysql> create table dept(
+    -> deptno int,
+    -> deptname varchar(50),
+    -> deptsal int );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into dept values(01,'Finance',23000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into dept values(02,'Finance',32000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into dept values(03,'Developer',43000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into dept values(04,'Accounting',22000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into dept values(05,'Accounting',41000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select* from dept;
++--------+------------+---------+
+| deptno | deptname   | deptsal |
++--------+------------+---------+
+|      1 | Finance    |   23000 |
+|      2 | Finance    |   32000 |
+|      3 | Developer  |   43000 |
+|      4 | Accounting |   22000 |
+|      5 | Accounting |   41000 |
++--------+------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select avg(deptsal)
+    -> from dept;
++--------------+
+| avg(deptsal) |
++--------------+
+|   32200.0000 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> create table product(
+    -> sno int,
+    -> productname varchar(50),
+    -> productprice int
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into product values(01,'Smartvision 4k TV',220000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into product values(02,'SonicBeats wireless',120000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into product values(03,'headphones',13000);,
+Query OK, 1 row affected (0.01 sec)
+
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',' at line 1
+mysql> insert into product values(03,'headphones',13000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into product values(04,'Laptop',150000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into product values(05,'Computer',110000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from product;
++------+---------------------+--------------+
+| sno  | productname         | productprice |
++------+---------------------+--------------+
+|    1 | Smartvision 4k TV   |       220000 |
+|    2 | SonicBeats wireless |       120000 |
+|    3 | headphones          |        13000 |
+|    3 | headphones          |        13000 |
+|    4 | Laptop              |       150000 |
+|    5 | Computer            |       110000 |
++------+---------------------+--------------+
+6 rows in set (0.00 sec)
+
+mysql> delete from product
+    -> where sno=3;
+Query OK, 2 rows affected (0.01 sec)
+
+mysql> select*from product;
++------+---------------------+--------------+
+| sno  | productname         | productprice |
++------+---------------------+--------------+
+|    1 | Smartvision 4k TV   |       220000 |
+|    2 | SonicBeats wireless |       120000 |
+|    4 | Laptop              |       150000 |
+|    5 | Computer            |       110000 |
++------+---------------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> select max(productname)
+    -> from product;
++---------------------+
+| max(productname)    |
++---------------------+
+| SonicBeats wireless |
++---------------------+
+1 row in set (0.01 sec)
+
+mysql> select max(productname) as maximiumpriceproduct
+    -> from product;
++----------------------+
+| maximiumpriceproduct |
++----------------------+
+| SonicBeats wireless  |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select min(productprice) as minimumproductname
+    -> from product;
++--------------------+
+| minimumproductname |
++--------------------+
+|             110000 |
++--------------------+
+1 row in set (0.01 sec)
+
+mysql> select max(productprice) as minimumproductname
+    -> from product;
++--------------------+
+| minimumproductname |
++--------------------+
+|             220000 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select*from student;
++-------+-----------+------------+
+| sroll | sname     | coursename |
++-------+-----------+------------+
+|     1 | Keerthana | java       |
+|     2 | vaishu    | c++        |
+|     3 | Harini    | java       |
+|     4 | Rubi      | c          |
+|     5 | uma       | java       |
+|     6 | devi      | c++        |
+|     7 | renu      | c          |
+|     8 | sheela    | c          |
+|     9 | jannu     | java       |
+|    10 | kavya     | java       |
++-------+-----------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select coursename,count(*) as studentcount
+    -> from student
+    -> group by coursename;
++------------+--------------+
+| coursename | studentcount |
++------------+--------------+
+| java       |            5 |
+| c++        |            2 |
+| c          |            3 |
++------------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> select*from dept;
++--------+------------+---------+
+| deptno | deptname   | deptsal |
++--------+------------+---------+
+|      1 | Finance    |   23000 |
+|      2 | Finance    |   32000 |
+|      3 | Developer  |   43000 |
+|      4 | Accounting |   22000 |
+|      5 | Accounting |   41000 |
++--------+------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select avg(deptsal)
+    -> from dept;
++--------------+
+| avg(deptsal) |
++--------------+
+|   32200.0000 |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select*from product;
++------+---------------------+--------------+
+| sno  | productname         | productprice |
++------+---------------------+--------------+
+|    1 | Smartvision 4k TV   |       220000 |
+|    2 | SonicBeats wireless |       120000 |
+|    4 | Laptop              |       150000 |
+|    5 | Computer            |       110000 |
++------+---------------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> select max(productprice)
+    -> from product;
++-------------------+
+| max(productprice) |
++-------------------+
+|            220000 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select min(productprice)
+    -> from product;
++-------------------+
+| min(productprice) |
++-------------------+
+|            110000 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> select max(productname)
+    -> from product;
++---------------------+
+| max(productname)    |
++---------------------+
+| SonicBeats wireless |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select min(productname)
+    -> from product;
++------------------+
+| min(productname) |
++------------------+
+| Computer         |
++------------------+
+1 row in set (0.00 sec)
