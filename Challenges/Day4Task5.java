@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class SimpleEmployeeCRUD {
 
-    static final String FILE_NAME = "C:\\Users\\alwin\\OneDrive\\Desktop\\alwin.txt";
+    static final String FILE_NAME ="C:\Users\casstudent\Documents\wd"
     
     public static void addEmployee(String data) throws IOException {
         FileWriter fw = new FileWriter(FILE_NAME, true); 
