@@ -1,0 +1,57 @@
+mysql> CREATE TABLE stud (
+    ->     rollno INT PRIMARY KEY,
+    ->     ename VARCHAR(50),
+    ->     course VARCHAR(50)
+    -> );
+mysql> INSERT INTO stud (rollno, ename, course) VALUES
+    -> (1, 'Michael', 'CT'),
+    -> (2, 'John', 'FullStack'),
+    -> (3, 'Karthi', 'Webdev'),
+    -> (4, 'Sam', 'MAYA'),
+    -> (5, 'Anna', 'Data Science');
+mysql> select*from stud;
+--------------
+select*from stud
+--------------
+
++--------+---------+--------------+
+| rollno | ename   | course       |
++--------+---------+--------------+
+|      1 | Michael | CT           |
+|      2 | John    | FullStack    |
+|      3 | Karthi  | Webdev       |
+|      4 | Sam     | MAYA         |
+|      5 | Anna    | Data Science |
++--------+---------+--------------+
+ CREATE TABLE marks (
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     rollno INT,
+    ->     marks INT);
+
+mysql> select*from marks;
+--------------
+select*from marks
+--------------
+
++----+--------+-------+
+| id | rollno | marks |
++----+--------+-------+
+|  1 |      1 |    78 |
+|  2 |      2 |    90 |
+|  3 |      3 |    89 |
+|  4 |      4 |    85 |
+|  5 |      5 |    92 |
++----+--------+-------+
+mysql> SELECT stud.rollno, stud.ename, stud.course, marks.marks
+    -> FROM stud
+    -> INNER JOIN marks ON stud.rollno = marks.rollno;
++--------+---------+--------------+-------+
+| rollno | ename   | course       | marks |
++--------+---------+--------------+-------+
+|      1 | Michael | CT           |    78 |
+|      2 | John    | FullStack    |    90 |
+|      3 | Karthi  | Webdev       |    89 |
+|      4 | Sam     | MAYA         |    85 |
+|      5 | Anna    | Data Science |    92 |
++--------+---------+--------------+-------+
+5 rows in set (0.00 sec)
