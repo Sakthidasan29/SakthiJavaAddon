@@ -3,7 +3,7 @@ package constructor;
 import java.io.*;
 import java.util.Scanner;
 
-public class SimpleEmployeeCRUD {
+public class CRUD {
 
     static final String FILE_NAME ="C:\Users\casstudent\Documents\wd"
     
