@@ -1,0 +1,22 @@
+use addon;
+CREATE TABLE Students (
+student_id INT PRIMARY KEY,
+name VARCHAR(50)
+);
+CREATE TABLE Subjects (
+ subject_name VARCHAR(50)
+);
+INSERT INTO Students (student_id, name) VALUES
+(1, 'Sakthi'),
+(2, 'Roshan'),
+(3, 'Sanjay'),
+(4, 'Surya'),
+(5, 'Vitor');
+INSERT INTO Subjects (subject_name) VALUES
+('Math'),
+('English'),
+('Science');
+SELECT s.name AS student_name,
+sub.subject_name
+FROM Students s
+CROSS JOIN Subjects sub;
