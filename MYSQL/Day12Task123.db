@@ -1,0 +1,62 @@
+package addon;
+
+import java.sql.*;
+
+public class JDBC_Connectivity {
+
+    public static void main(String[] args) throws Exception {
+
+        String url = "jdbc:mysql://localhost:3306/addon";
+        String user = "root";
+        String password = "password";
+
+        Connection con = DriverManager.getConnection(url, user, password);
+        System.out.println("Connected successfully!");
+
+        String[] names = {"Sakthi", "Sanjay", "Surya", "roshan", "Victor"};
+        int[] marks = {90, 85, 88, 92, 80}; 
+        String course = "Java";
+
+        PreparedStatement stmt = con.prepareStatement("INSERT INTO students(name, course, marks) VALUES (?, ?, ?)");
+        for (int i = 0; i < names.length; i++) {
+            stmt.setString(1, names[i]);
+            stmt.setString(2, course);
+            stmt.setInt(3, marks[i]);
+            stmt.executeUpdate();
+            System.out.println("Inserted: " + names[i]);
+        }
+
+        Statement stmt1 = con.createStatement();
+        ResultSet rs = stmt1.executeQuery("SELECT * FROM students");
+
+        System.out.println("\n--- Student Records ---");
+        while (rs.next()) {
+            System.out.println("ID: " + rs.getInt("id") +
+                               ", Name: " + rs.getString("name") +
+                               ", Course: " + rs.getString("course") +
+                               ", Marks: " + rs.getInt("marks"));
+        }
+
+        stmt.close();
+        stmt1.close();
+        con.close();
+    }
+}
+
+Output:
+Connected successfully!
+Inserted: Sakthi
+Inserted: Sanjay
+Inserted: Surya
+Inserted: Roshan
+Inserted: Victor
+
+--- Student Records ---
+ID: 1, Name: Sakthi, Course: Java, Marks: 90
+ID: 2, Name: SakThi, Course: Java, Marks: 90
+ID: 3, Name: Sakthi, Course: Java, Marks: 90
+ID: 4, Name: Sakthi, Course: Java, Marks: 90
+ID: 5, Name: Sanjay, Course: Java, Marks: 85
+ID: 6, Name: Surya, Course: Java, Marks: 88
+ID: 7, Name: Roshan, Course: Java, Marks: 92
+ID: 8, Name: Victor, Course: Java, Marks: 80
